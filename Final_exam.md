@@ -24,8 +24,32 @@ In Godot `_process` is a built in method that is called every time a frame is dr
 
 # Part 2: Project Reflection
 
-My goal for the final project was to implementing a classic successful arcade game. I chose space invaders and worked to recreate it’s features and design in Godot. This was done keeping intellectual property restrictions in mind so using copyrighted materials from space invaders was off limits.
+My goal for the final project was to implementing a classic successful arcade game. I chose Space Invaders and worked to recreate it’s features and design in Godot. This was done keeping intellectual property restrictions in mind so using copyrighted materials from space invaders was off limits. I decided to call my game Fake Invaders.
 
-### What Went Right
+## What Went Right
 
-### What Went Wrong
+### 1) The resemblance to the goal is clear
+
+My original goal was to create a recreation of the original Space Invaders and I would say I succeeded in doing so. My end result clearly resembles the game without using any of it's copyrighted materials. The game play is also very close to my target. When I showed my project to my parents they both immediately recognized it as Space Invaders I had to correct them of course because it was actually Fake Invaders. 
+
+### 2) Good grasp of the tools and workflow
+
+After working through the first few projects this semester I felt I had gotten a decent grasp of way Godot worked. Things like signals which had originally confused me I was using readily. I had also gotten better with git and setting up continuous integration. My first time setting up continuous integration I had several issues, but with that sorted out setting it up for subsequent projects was easy. I felt more confident with my tools going into the final project, and indeed I was no longer in tutorial hell every time I went to implement a new feature. The majority of the final project I was able to come up with my own solutions instead of having to search for them.
+
+### 3) Destructible cover appearance
+
+One of the most challenging features of Space Invaders that I had planned to implement was the destructible cover. Although I am not happy with the way I implemented destructible cover in my game I am happy with the way it looks. It seems to simulate the pixilated destruction seen in Space invaders well. Bullets and bombs leave blown out holes in the cover and this allows the player to shoot through his cover at the invaders. It also allows the invaders to slowly destroy the players cover forcing the player to move.
+
+## What Went Wrong
+
+### 1) Destructible cover implementation
+
+I would have to agree with the feedback given on my final project. I got destructible cover to work but in the process I shoehorned tools into positions they shouldn't really be in. I got it to work by creating a grid of pixels with colliders. I wrote a recursive algorithm that checked the surrounding pixels and did a random check to see if it was destroyed before calling this function on its surrounding pixels. A better approach as my final project feedback recommended would have been to copy how games Worms or Scorched Earth make it work. This approach would  model or inspect the pixels that make up the terrain, and then keep track of a mask to eliminate them. I wish I had found this approach while doing my research.
+
+### 2) Lack of polish
+
+My final product could really stand to benefit from some polish. There are many things I wish I had cleaned up or improve at the top of that list would be my destructible cover implementation. Other than that that I would have like to add feed back when the player loses a life, as it currently stands the only indication of a life lost in the counter in the bottom left. There was another bug where bullets would stay on the screen when scenes transitioned. These were absolutely fixable problems that could have been fixed with some more effort.
+
+### 3) Missing features
+
+I did not manage to fully recreate the features of space invaders. My version only only has 1 enemy type where as the real game has 4. I also only recreated a single wave of Space Invaders the real game respawns the invaders and increases the difficulty. I am also missing the mystery ship. Because of my lack of invader variety my point system is comparatively flat. The original game gave different point amounts based on the invader killed, my version is lacking that. Adding these features would have flushed out my game and created a more complete Fake Invaders.
